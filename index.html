@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>reveal.js</title>
+
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/black.css">
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css">
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+        <section>
+            <section>
+                <h1>Tech Structure Of XXX</h1>
+            </section>
+            <section>
+                <img width="80%" height="auto" data-src="./imgs/strcture.png">
+            </section>
+        </section>
+        <section>
+            <section>
+                <h2>React</h2>
+                <p>A JavaScript library for building user interfaces</p>
+                <img width="20%" height="auto" data-src="./imgs/react.png">
+            </section>
+            <section>
+                <h3>React Scripts</h3>
+                <p>
+                    It's simply to create single-page React App.
+                </p>
+                <pre data-id="code-animation">
+                    <code class="hljs" data-trim data-line-numbers>
+                        npx create-react-app my-app
+                        cd my-app
+                        npm start
+                    </code>
+                </pre>
+            </section>
+            <section>
+                <h3>Component</h3>
+                <p>Components let you split the UI into independent, reusable pieces</p>
+                <pre data-id="code-animation">
+                    <code class="hljs" data-trim data-line-numbers>
+                        function Welcome(props) {
+                          return <h1>Hello, {props.name}</h1>;
+                        }
+                    </code>
+                </pre>
+            </section>
+            <section>
+                <h3>Hooks</h3>
+                <p>Global Context, Packaged Side Effects</p>
+                <pre data-id="code-animation">
+                    <code class="hljs" data-trim data-line-numbers>
+                        function Example() {
+                          const [count, setCount] = useState(0);
+
+                          useEffect(() => {
+                            document.title = `You clicked ${count} times`;
+                          });
+
+                          return (
+                            <div>
+                              <p>You clicked {count} times</p>
+                              <button onClick={() => setCount(count + 1)}>
+                                Click me
+                                </button>
+                            </div>
+                          );
+                        }
+                    </code>
+                </pre>
+            </section>
+            <section>
+                <h3>Router</h3>
+                <p>a fully-featured client routing library for React</p>
+                <img width="50%" height="auto" data-src="./imgs/router.png">
+            </section>
+        </section>
+    </div>
+</div>
+
+<script src="dist/reveal.js"></script>
+<script src="plugin/notes/notes.js"></script>
+<script src="plugin/markdown/markdown.js"></script>
+<script src="plugin/highlight/highlight.js"></script>
+<script>
+  // More info about initialization & config:
+  // - https://revealjs.com/initialization/
+  // - https://revealjs.com/config/
+  Reveal.initialize({
+    hash: true,
+
+    // Learn about plugins: https://revealjs.com/plugins/
+    plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+  })
+</script>
+</body>
+</html>
