@@ -54,22 +54,94 @@
                     </code>
                 </pre>
             </section>
-            <section>
+            <section data-auto-animate>
                 <h3>Hooks</h3>
                 <p>Global Context, Packaged Side Effects</p>
                 <pre data-id="code-animation">
                     <code class="hljs" data-trim data-line-numbers>
                         function Example() {
+                          // Add some State
+                          // Init && Destroy Something
+                          // Watch Something
+                          return (
+                            <div>
+                              <p>You clicked 0 times</p>
+                            </div>
+                          );
+                        }
+                    </code>
+                </pre>
+            </section>
+            <section data-auto-animate>
+                <h3>Hooks</h3>
+                <p>Global Context, Packaged Side Effects</p>
+                <pre data-id="code-animation">
+                    <code class="hljs" data-trim data-line-numbers>
+                        function Example() {
+                          // Add some State
                           const [count, setCount] = useState(0);
-
-                          useEffect(() => {
-                            document.title = `You clicked ${count} times`;
-                          });
+                          // Init && Destroy Something
+                          // Watch Something
 
                           return (
                             <div>
                               <p>You clicked {count} times</p>
-                              <button onClick={() => setCount(count + 1)}>
+                              <button onClick="{()=> setCount(count + 1)}">
+                                Click me
+                              </button>
+                            </div>
+                          );
+                        }
+                    </code>
+                </pre>
+            </section>
+            <section data-auto-animate>
+                <h3>Hooks</h3>
+                <p>Global Context, Packaged Side Effects</p>
+                <pre data-id="code-animation">
+                    <code class="hljs" data-trim data-line-numbers>
+                        function Example() {
+                          // Add some State
+                          const [count, setCount] = useState(0);
+                          // Init && Destroy Something
+                          useEffect(() => {
+                            Websocket.open();
+                            return ()=> Websocket.close();
+                          },);
+                          // Watch Something
+                          return (
+                            <div>
+                              <p>You clicked {count} times</p>
+                              <button onClick="{()=> setCount(count + 1)}">
+                                Click me
+                                </button>
+                            </div>
+                          );
+                        }
+                    </code>
+                </pre>
+            </section>
+            <section data-auto-animate>
+                <h3>Hooks</h3>
+                <p>Global Context, Packaged Side Effects</p>
+                <pre data-id="code-animation">
+                    <code class="hljs" data-trim data-line-numbers>
+                        function Example() {
+                          // Add some State
+                          const [count, setCount] = useState(0);
+                          // Init && Destroy Something
+                          useEffect(() => {
+                            Websocket.open();
+                            return ()=> Websocket.close();
+                          },);
+                          // Watch Something
+                          useEffect(() => {
+                            document.title = `You clicked ${count} times`;
+                          },[count]);
+                          return (
+                            <div>
+                              <p>You clicked {count} times</p>
+                              <button onClick="{()=> setCount(count + 1)}">
                                 Click me
                                 </button>
                             </div>
@@ -93,7 +165,7 @@
             <section>
                 <h3>Mui Componenet</h3>
                 <p>
-                    
+
                 </p>
                 <pre data-id="code-animation">
                     <code class="hljs" data-trim data-line-numbers>
@@ -104,6 +176,133 @@
                 </pre>
             </section>
         </section>
+        <section>
+            <section>
+                <h2>Axios</h2>
+                <p>Promise based HTTP client for the browser and node.js</p>
+                <img width="20%" src="imgs/axios.png"/>
+            </section>
+            <section>
+                 <pre data-id="code-animation">
+                     <code class="hljs" data-trim data-line-numbers>
+                         function fetchData(){
+                            const instance = axios.create({
+                              baseURL: 'https://some-domain.com/api/',
+                              timeout: 1000,
+                              headers: {'X-Custom-Header': 'foobar'}
+                            });
+                            return instance.get('/data')
+                         }
+                     </code>
+                 </pre>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h2>miragejs</h2>
+                <p>Build complete frontend features,</p>
+                <p>even if your API doesn't exist</p>
+                <img width="20%" height="auto" data-src="./imgs/mirage.png">
+            </section>
+            <section>
+                 <pre data-id="code-animation">
+                     <code class="hljs" data-trim data-line-numbers>
+                        import { createServer } from "miragejs"
+
+                        export default function () {
+                          createServer({
+                            routes() {
+                              this.get("/data", () => ({
+                                reminders: [],
+                              }))
+                            },
+                          })
+                        }
+                     </code>
+                 </pre>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h2>Test</h2>
+                <p>Not only the logic, but also the UI</p>
+                <img width="20%" height="auto" data-src="./imgs/test.png">
+            </section>
+            <section>
+                <h2>Jest</h2>
+                <pre data-id="code-animation">
+                     <code class="hljs" data-trim data-line-numbers>
+                        import { createServer } from "miragejs"
+
+                        export default function () {
+                          createServer({
+                            routes() {
+                              this.get("/data", () => ({
+                                reminders: [],
+                              }))
+                            },
+                          })
+                        }
+                     </code>
+                 </pre>
+            </section>
+            <section>
+                <h2>Testing Library</h2>
+                <pre data-id="code-animation">
+                     <code class="hljs" data-trim data-line-numbers>
+                        import { createServer } from "miragejs"
+
+                        export default function () {
+                          createServer({
+                            routes() {
+                              this.get("/data", () => ({
+                                reminders: [],
+                              }))
+                            },
+                          })
+                        }
+                     </code>
+                 </pre>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h2>Eslint</h2>
+                <p>Find and fix problems in your JavaScript code</p>
+                <img width="20%" height="auto" data-src="./imgs/eslint.png">
+            </section>
+            <section>
+
+                <pre data-id="code-animation">
+                     <code class="hljs" data-trim data-line-numbers>
+                         // add to project
+                         npm install eslint --save-dev
+                         // init eslint
+                         npm init @eslint/config
+                         // you'll have a .eslintrc.{js,yml,json} file in your directory. In it, you'll see some rules configured like this
+                         // The names "semi" and "quotes" are the names of rules in ESLint.
+                         // The first value is the error level of the rule and can be one of these values:
+                         {
+                            "rules": {
+                                "semi": ["error", "always"],
+                                "quotes": ["error", "double"]
+                            }
+                        }
+                     </code>
+                </pre>
+            </section>
+            <section>
+                <p>Once some errors find by Eslint's static analyze</p>
+                <img width="auto" height="auto" data-src="./imgs/eslint-error.png">
+            </section>
+        </section>
+        <section>
+            <section>
+                <h2>Husky</h2>
+                <p>Make easy to add git hook</p>
+                <img width="20%" height="auto" data-src="./imgs/husky.png">
+            </section>
+        </section>
     </div>
 </div>
 
@@ -112,15 +311,15 @@
 <script src="plugin/markdown/markdown.js"></script>
 <script src="plugin/highlight/highlight.js"></script>
 <script>
-  // More info about initialization & config:
-  // - https://revealjs.com/initialization/
-  // - https://revealjs.com/config/
-  Reveal.initialize({
-    hash: true,
+    // More info about initialization & config:
+    // - https://revealjs.com/initialization/
+    // - https://revealjs.com/config/
+    Reveal.initialize({
+        hash: true,
 
-    // Learn about plugins: https://revealjs.com/plugins/
-    plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
-  })
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+    })
 </script>
 </body>
 </html>
