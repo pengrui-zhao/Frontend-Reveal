@@ -1,0 +1,15 @@
+1.
+about this session, let's show technical framework about xxx project and how used related technology in xxx project. final we will show project structure for us.
+let's go though the image, These logos represent the different techniques used in the current project, we will introduce these part.
+.we use react and react router to be the project base framework.
+and used MUI component library to develop ui code and adapting whole project style.
+axios provide ajax async communication.such as send https request to get or modify group info.
+we want to run xxx project in local env, so it's a good way to use mirageJs to mock server api. it's not in the image.
+and about unit test. we use jest library and react testing library to develop unit test.
+husky is a plugin for adding git hooks , we use husky to add git commit hook, avoid some test run failed when we committed.
+ESLint provide statically analyzes for your code to quickly find problems. it's useful when developing.
+
+2.
+
+
+
