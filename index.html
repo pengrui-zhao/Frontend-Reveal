@@ -37,9 +37,12 @@
                 </p>
                 <pre data-id="code-animation">
                     <code class="hljs" data-trim data-line-numbers>
-                        npx create-react-app my-app
-                        cd my-app
-                        npm start
+                        $ npx create-react-app my-app
+                        $ cd my-app
+                        $ npm start
+
+                        // if want create a typescript app, following the code
+                        $ npx create-react-app my-app --template typescript
                     </code>
                 </pre>
             </section>
@@ -59,13 +62,23 @@
                 <p>Global Context, Packaged Side Effects</p>
                 <pre data-id="code-animation">
                     <code class="hljs" data-trim data-line-numbers>
+                        import React, { useState, useEffect } from 'react';
+
                         function Example() {
-                          // Add some State
-                          // Init && Destroy Something
-                          // Watch Something
+                          const [count, setCount] = useState(0);
+
+                          // Similar to componentDidMount and componentDidUpdate:
+                          useEffect(() => {
+                            // Update the document title using the browser API
+                            document.title = `You clicked ${count} times`;
+                          });
+
                           return (
                             <div>
-                              <p>You clicked 0 times</p>
+                              <p>You clicked {count} times</p>
+                              <button onClick={() => setCount(count + 1)}>
+                                Click me
+                                </button>
                             </div>
                           );
                         }
