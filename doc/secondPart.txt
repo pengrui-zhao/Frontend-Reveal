@@ -1,0 +1,20 @@
+-- homepage
+Hi everyone, welcome to today's session.
+We'll talk about how we built a frontend project in XXX project, and show how we make all of those work together in our code.
+All the session, We'll focus on the technology in frontend, not the devops or other skills.
+We used many frameworks to make the code easy to write, test, build, deploy and maintain.
+Let's introduce some of those to you.
+
+-- technical map
+It's a technical map for our code.
+We use the NPM, React and Typescript as our base framework to support the OOP and Component function.
+And for user experience, the MUI is our choose.
+And for the restful api call, we chose Axios as the solution.
+And for the developing without the backend, we chose MirageJs.
+And for the testing, we chose Jest and Testing Library to test both the logic and UI.
+And for the code check and format, we chose the eslint and husky.
+That's all for the frameworks we'll share today. Next, let's share some sample introduction for all the frameworks to you.
+
+
+--
+
