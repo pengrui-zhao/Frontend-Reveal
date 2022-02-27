@@ -19,6 +19,11 @@
         <section>
             <section>
                 <h1>Tech Structure Of XXX</h1>
+                <aside class="notes">
+                    Hi everyone, welcome to today's session.
+                    We'll talk about how we built a frontend project in XXX project, and show how we make all of those work together in our code.
+                    All the session, We'll focus on the technology in frontend, not the devops or other skills.
+                </aside>
             </section>
             <section>
                 <img width="80%" height="auto" data-src="./imgs/strcture.png">
@@ -76,7 +81,7 @@
                           return (
                             <div>
                               <p>You clicked {count} times</p>
-                              <button onClick={() => setCount(count + 1)}>
+                              <button onClick="{() => setCount(count + 1)}">
                                 Click me
                                 </button>
                             </div>
@@ -346,15 +351,16 @@
 <script src="plugin/markdown/markdown.js"></script>
 <script src="plugin/highlight/highlight.js"></script>
 <script>
-    // More info about initialization & config:
-    // - https://revealjs.com/initialization/
-    // - https://revealjs.com/config/
-    Reveal.initialize({
-        hash: true,
+  // More info about initialization & config:
+  // - https://revealjs.com/initialization/
+  // - https://revealjs.com/config/
+  Reveal.initialize({
+    hash: true,
 
-        // Learn about plugins: https://revealjs.com/plugins/
-        plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
-    })
+    // Learn about plugins: https://revealjs.com/plugins/
+    plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+    defaultTiming: null
+  })
 </script>
 </body>
 </html>
