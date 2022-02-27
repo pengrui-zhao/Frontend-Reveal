@@ -16,5 +16,14 @@ And for the code check and format, we chose the eslint and husky.
 That's all for the frameworks we'll share today. Next, let's share some sample introduction for all the frameworks to you.
 
 
---
+-- React
 
+
+-- MUI
+MUI is a popular React UI framework. It provides a fast way to develop React applications. We can reuse many components already created by MUI team.
+
+It's easy to import it to our React project. Just follow the documents at their website.
+
+And for the components, we can use it in our code after import it the component.
+
+We can customize MUI with our own theme. With the ThemeProvider can change the colors, the typography and much more.

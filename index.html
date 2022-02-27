@@ -21,12 +21,25 @@
                 <h1>Tech Structure Of XXX</h1>
                 <aside class="notes">
                     Hi everyone, welcome to today's session.
-                    We'll talk about how we built a frontend project in XXX project, and show how we make all of those work together in our code.
+                    We'll talk about how we built a frontend project in XXX project, and show how we make all of those
+                    work together in our code.
                     All the session, We'll focus on the technology in frontend, not the devops or other skills.
                 </aside>
             </section>
             <section>
                 <img width="80%" height="auto" data-src="./imgs/strcture.png">
+                <aside class="notes">
+                    It's a technical map for our code.
+                    We use the NPM, React and Typescript as our base framework to support the OOP and Component
+                    function.
+                    And for user experience, the MUI is our choose.
+                    And for the restful api call, we chose Axios as the solution.
+                    And for the developing without the backend, we chose MirageJs.
+                    And for the testing, we chose Jest and Testing Library to test both the logic and UI.
+                    And for the code check and format, we chose the eslint and husky.
+                    That's all for the frameworks we'll share today. Next, let's share some sample introductions for all
+                    the frameworks to you.
+                </aside>
             </section>
         </section>
         <section>
@@ -177,21 +190,82 @@
         <section>
             <section>
                 <h2>Mui</h2>
-                <p>MUI provides fast way to develop React applications</p>
+                <p>MUI provides a fast way to develop React applications</p>
                 <img width="20%" height="auto" data-src="./imgs/mui.png">
+                <aside class="notes">
+                    MUI is a popular React UI framework. It provides a fast way to develop React applications. We can
+                    reuse many components already created by MUI team.
+                </aside>
             </section>
             <section>
-                <h3>Mui Componenet</h3>
+                <h3>Mui Install</h3>
+                <p>Follow the documents at their website</p>
+                <pre data-id="code-animation">
+                    <code class="hljs" data-trim data-line-numbers>
+                        <script type="text/template">
+                        npm install @mui/material @emotion/react @emotion/styled
+                        </script>
+                    </code>
+                </pre>
+                <aside class="notes">
+                    It's easy to import it to our React project. Just follow the documents at their website.
+                </aside>
+            </section>
+            <section>
+                <h3>Mui Component</h3>
                 <p>
 
                 </p>
                 <pre data-id="code-animation">
-                    <code class="hljs" data-trim data-line-numbers>
-                        npx create-react-app my-app
-                        cd my-app
-                        npm start
+                    <code class="hljs" data-trim data-line-numbers="3-6">
+                        <script type="text/template">
+                        import * as React from 'react';
+                        import ReactDOM from 'react-dom';
+                        import Button from '@mui/material/Button';
+
+                        function App() {
+                          return <Button variant="contained">Hello World</Button>;
+                        }
+
+                        ReactDOM.render(<App/>, document.querySelector('#app'));
+                        </script>
                     </code>
                 </pre>
+                <aside class="notes">
+                    And for the components, we can use it in our code after import it the component.
+                </aside>
+            </section>
+            <section>
+                <h3>Mui Style</h3>
+                <p>
+
+                </p>
+                <pre data-id="code-animation">
+                    <code class="hljs" data-trim data-line-numbers="3-12,15">
+                        <script type="text/template">
+                        import * as React from 'react';
+                        import ReactDOM from 'react-dom';
+                        import { red } from '@mui/material/colors';
+                        import { ThemeProvider, createTheme } from '@mui/material/styles';
+
+                        const theme = createTheme({
+                          palette: {
+                            primary: {
+                              main: red[500],
+                            },
+                          },
+                        });
+
+                        function App() {
+                        return <ThemeProvider theme={theme}>...</ThemeProvider>;
+                        }
+                        ReactDOM.render( <App/>, document.querySelector('#app'));
+                        </script>
+                    </code>
+                </pre>
+                <aside class="notes">
+                    We can customize MUI with our own theme. With the ThemeProvider can change the colors, the typography and much more.
+                </aside>
             </section>
         </section>
         <section>
