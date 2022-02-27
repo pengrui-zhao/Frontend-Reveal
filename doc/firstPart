@@ -26,8 +26,8 @@ and the hooks provide other's Additional Hooks: such as useMemo, useCallback (to
 
 5.
 React Router is a fully-featured client and server-side routing library for React. based by the image can understand react router.
-chrome return our react app when visiting web page. we can use router to control different components render in a current page.
-and the link changing the URL without causing a full page reload.
+chrome return our react app when visiting web page. we can config each component a URI. router based URI to control different components render in a current page.
+and the link will happened change, but it will not causing a full page reload.
 
 
 
