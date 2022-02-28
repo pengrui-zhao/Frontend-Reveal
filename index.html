@@ -63,6 +63,11 @@
                         $ npx create-react-app my-app --template typescript
                     </code>
                 </pre>
+                <aside class="notes">
+                    react is a JavaScript library for building user interfaces,
+                    it provide a script to help user quickly build single page reach App. this example is create my-app, it just one line code so simply.
+                    if want create a typescript app, you can added parameter double bar template typescript.
+                </aside>
             </section>
             <section>
                 <h3>Component</h3>
@@ -74,23 +79,27 @@
                         }
                     </code>
                 </pre>
+                <aside class="notes">
+                    react components let you split the UI into independent, reusable pieces. in our project the vise table and mastercard table have same structure,
+                    we can define a table component for these twe table. we just can input different data can show visa table and mastercard table.
+                    we can define component as function or lambda.
+                </aside>
             </section>
             <section data-auto-animate>
                 <h3>Hooks</h3>
                 <p>Global Context, Packaged Side Effects</p>
                 <pre data-id="code-animation">
                     <code class="hljs" data-trim data-line-numbers>
-                        import React, { useState, useEffect } from 'react';
-
-                        function Example() {
-                          const [count, setCount] = useState(0);
-
-                          // Similar to componentDidMount and componentDidUpdate:
-                          useEffect(() => {
-                            // Update the document title using the browser API
-                            document.title = `You clicked ${count} times`;
-                          });
-
+                       function Example() {
+                          // Add some State
+                          // Init && Destroy Something
+                          // Watch Something
+                          return (
+                            <div>
+                              <p>You clicked 0 times</p>
+                            </div>
+                          );
+                        }
                           return (
                             <div>
                               <p>You clicked {count} times</p>
@@ -102,6 +111,11 @@
                         }
                     </code>
                 </pre>
+                <aside class="notes">
+                    react hooks provide global context, packaged side effect, about this example to introduce effect hooks, we can declare a State variable is count, and if the count have been updated,
+                    the useEffect function will sync run to update document title. state and effect function all belong to the hooks. in the project use basic hooks: useState and useEffect and useContext.
+                    and the hooks provide other's Additional Hooks: such as useMemo, useCallback (to resolve repeat render / optimize performance).
+                </aside>
             </section>
             <section data-auto-animate>
                 <h3>Hooks</h3>
@@ -125,6 +139,11 @@
                         }
                     </code>
                 </pre>
+                <aside class="notes">
+                    react hooks provide global context, packaged side effect, about this example to introduce effect hooks, we can declare a State variable is count, and if the count have been updated,
+                    the useEffect function will sync run to update document title. state and effect function all belong to the hooks. in the project use basic hooks: useState and useEffect and useContext.
+                    and the hooks provide other's Additional Hooks: such as useMemo, useCallback (to resolve repeat render / optimize performance).
+                </aside>
             </section>
             <section data-auto-animate>
                 <h3>Hooks</h3>
@@ -151,6 +170,11 @@
                         }
                     </code>
                 </pre>
+                <aside class="notes">
+                    react hooks provide global context, packaged side effect, about this example to introduce effect hooks, we can declare a State variable is count, and if the count have been updated,
+                    the useEffect function will sync run to update document title. state and effect function all belong to the hooks. in the project use basic hooks: useState and useEffect and useContext.
+                    and the hooks provide other's Additional Hooks: such as useMemo, useCallback (to resolve repeat render / optimize performance).
+                </aside>
             </section>
             <section data-auto-animate>
                 <h3>Hooks</h3>
@@ -180,11 +204,21 @@
                         }
                     </code>
                 </pre>
+                <aside class="notes">
+                    react hooks provide global context, packaged side effect, about this example to introduce effect hooks, we can declare a State variable is count, and if the count have been updated,
+                    the useEffect function will sync run to update document title. state and effect function all belong to the hooks. in the project use basic hooks: useState and useEffect and useContext.
+                    and the hooks provide other's Additional Hooks: such as useMemo, useCallback (to resolve repeat render / optimize performance).
+                </aside>
             </section>
             <section>
                 <h3>Router</h3>
                 <p>a fully-featured client routing library for React</p>
                 <img width="50%" height="auto" data-src="./imgs/router.png">
+                <aside class="notes">
+                    React Router is a fully-featured client and server-side routing library for React. based by the image can understand react router.
+                    chrome return our react app when visiting web page. we can config each component a URI. router based URI to control different components render in a current page.
+                    and the link will happened change, but it will not causing a full page reload.
+                </aside>
             </section>
         </section>
         <section>
