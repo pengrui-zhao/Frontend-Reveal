@@ -20,25 +20,27 @@
             <section>
                 <h1>Tech Structure Of XXX</h1>
                 <aside class="notes">
-                    Hi everyone, welcome to today's session.
-                    We'll talk about how we built a frontend project in XXX project, and show how we make all of those
-                    work together in our code.
-                    All the session, We'll focus on the technology in frontend, not the devops or other skills.
+                    Hi everyone, welcome to today's session.<br>
+                    We'll talk about how we built a frontend project in XXX project, <br>
+                    and show we used technology in frontend.<br>
                 </aside>
             </section>
             <section>
                 <img width="100%" height="auto" data-src="./imgs/strcture.png">
                 <aside class="notes">
-                    It's a technical map for our code.
-                    We use the NPM, React and Typescript as our base framework to support the OOP and Component
-                    function.
-                    And for user experience, the MUI is our choose.
-                    And for the restful api call, we chose Axios as the solution.
-                    And for the developing without the backend, we chose MirageJs.
-                    And for the testing, we chose Jest and Testing Library to test both the logic and UI.
-                    And for the code check and format, we chose the eslint and husky.
-                    That's all for the frameworks we'll share today. Next, let's share some sample introductions for all
-                    the frameworks to you.
+                    It's a technical map for our code. <br>
+                    in application core.
+                    We use React and Typescript as our base framework.<br>
+                    And we choose MUI library develop our UI component. <br>
+                    And for http request, we choose Axios as the solution <br>
+                    About the unit test, <br>
+                    Jest and Testing library can to test UI and logic<br>
+                    MirageJs provide mock server, <br>
+                    it can help us to run xxx project in local env.<br>
+                    In develop plugin <br>
+                    we use husky and eslint to check and format our code <br>
+                    That's all for the frameworks we'll share today. <br>
+                    Next, let's share some introductions for these frameworks.<br>
                 </aside>
             </section>
         </section>
@@ -64,9 +66,12 @@
                     </code>
                 </pre>
                 <aside class="notes">
-                    react is a JavaScript library for building user interfaces,
-                    it provide a script to help user quickly build single page reach App. this example is create my-app, it just one line code so simply.
-                    if want create a typescript app, you can added parameter double bar template typescript.
+                    react is a JavaScript library for building user interfaces <br>
+                    it provide a script to help users quickly build reach App.<br>
+                    this example create my-app, <br>
+                    it just needs one line code.<br>
+                    if want to create a typescript app, you can add param. <br>
+                    template typescript<br>
                 </aside>
             </section>
             <section>
@@ -80,9 +85,13 @@
                     </code>
                 </pre>
                 <aside class="notes">
-                    react components let you split the UI into independent, reusable pieces. in our project the vise table and mastercard table have same structure,
-                    we can define a table component for these twe table. we just can input different data can show visa table and mastercard table.
-                    we can define component as function or lambda.
+                    react components split the UI part independent and reusable. <br>
+                    in our project the vise table and mastercard table have same structure <br>
+                    we have defined one component for these twe table.<br>
+                    we just input visa data or mastercard data to this component.<br>
+                    it can show visa table or mastercard table based different data<br>
+                    this demo is a sample component 简单的例子<br>
+                    we can define component as function or lambda.<br>
                 </aside>
             </section>
             <section data-auto-animate>
@@ -112,9 +121,26 @@
                     </code>
                 </pre>
                 <aside class="notes">
-                    react hooks provide global context, packaged side effect, about this example to introduce effect hooks, we can declare a State variable is count, and if the count have been updated,
-                    the useEffect function will sync run to update document title. state and effect function all belong to the hooks. in the project use basic hooks: useState and useEffect and useContext.
-                    and the hooks provide other's Additional Hooks: such as useMemo, useCallback (to resolve repeat render / optimize performance).
+                    react hooks provide global context <br>
+                    and packaged side effect <br>
+                    we can use hooks to fetching data and setting up a subscription and changing the DOM and logging <br>
+                    hooks have many kinds.<br>
+                    in our project use state hook, effect hook and context hook.<br>
+                    this demo to introduce effect hook <br><br>
+
+                    we can declare state variable is count (look like this line)<br>
+                    and if we want init something<br>
+                    such as we can define init webSocket code in useEffect <br>
+                    it will run when component init. <br>
+                    and if we want destroy something <br>
+                    such as we can define close webSocket code in useEffect return <br>
+                    it will run when component destroy <br><br>
+
+                    and if we want watch something changed <br>
+                    we can define it in useEffect second param <br>
+                    such as this demo.(plus) <br>
+                    when count have been updated. useEffect will run<br>
+                    the document title will be updated <br>
                 </aside>
             </section>
             <section data-auto-animate>
@@ -140,9 +166,26 @@
                     </code>
                 </pre>
                 <aside class="notes">
-                    react hooks provide global context, packaged side effect, about this example to introduce effect hooks, we can declare a State variable is count, and if the count have been updated,
-                    the useEffect function will sync run to update document title. state and effect function all belong to the hooks. in the project use basic hooks: useState and useEffect and useContext.
-                    and the hooks provide other's Additional Hooks: such as useMemo, useCallback (to resolve repeat render / optimize performance).
+                    react hooks provide global context <br>
+                    and packaged side effect <br>
+                    we can use hooks to fetching data and setting up a subscription and changing the DOM and logging <br>
+                    hooks have many kinds.<br>
+                    in our project use state hook, effect hook and context hook.<br>
+                    this demo to introduce effect hook <br><br>
+
+                    we can declare state variable is count (look like this line)<br>
+                    and if we want init something<br>
+                    such as we can define init webSocket code in useEffect <br>
+                    it will run when component init. <br>
+                    and if we want destroy something <br>
+                    such as we can define close webSocket code in useEffect return <br>
+                    it will run when component destroy <br><br>
+
+                    and if we want watch something changed <br>
+                    we can define it in useEffect second param <br>
+                    such as this demo.(plus) <br>
+                    when count have been updated. useEffect will run<br>
+                    the document title will be updated <br>
                 </aside>
             </section>
             <section data-auto-animate>
@@ -171,9 +214,26 @@
                     </code>
                 </pre>
                 <aside class="notes">
-                    react hooks provide global context, packaged side effect, about this example to introduce effect hooks, we can declare a State variable is count, and if the count have been updated,
-                    the useEffect function will sync run to update document title. state and effect function all belong to the hooks. in the project use basic hooks: useState and useEffect and useContext.
-                    and the hooks provide other's Additional Hooks: such as useMemo, useCallback (to resolve repeat render / optimize performance).
+                    react hooks provide global context <br>
+                    and packaged side effect <br>
+                    we can use hooks to fetching data and setting up a subscription and changing the DOM and logging <br>
+                    hooks have many kinds.<br>
+                    in our project use state hook, effect hook and context hook.<br>
+                    this demo to introduce effect hook <br><br>
+
+                    we can declare state variable is count (look like this line)<br>
+                    and if we want init something<br>
+                    such as we can define init webSocket code in useEffect <br>
+                    it will run when component init. <br>
+                    and if we want destroy something <br>
+                    such as we can define close webSocket code in useEffect return <br>
+                    it will run when component destroy <br><br>
+
+                    and if we want watch something changed <br>
+                    we can define it in useEffect second param <br>
+                    such as this demo.(plus) <br>
+                    when count have been updated. useEffect will run<br>
+                    the document title will be updated <br>
                 </aside>
             </section>
             <section data-auto-animate>
@@ -205,9 +265,26 @@
                     </code>
                 </pre>
                 <aside class="notes">
-                    react hooks provide global context, packaged side effect, about this example to introduce effect hooks, we can declare a State variable is count, and if the count have been updated,
-                    the useEffect function will sync run to update document title. state and effect function all belong to the hooks. in the project use basic hooks: useState and useEffect and useContext.
-                    and the hooks provide other's Additional Hooks: such as useMemo, useCallback (to resolve repeat render / optimize performance).
+                    react hooks provide global context <br>
+                    and packaged side effect <br>
+                    we can use hooks to fetching data and setting up a subscription and changing the DOM and logging <br>
+                    hooks have many kinds.<br>
+                    in our project use state hook, effect hook and context hook.<br>
+                    this demo to introduce effect hook <br><br>
+
+                    we can declare state variable is count (look like this line)<br>
+                    and if we want init something<br>
+                    such as we can define init webSocket code in useEffect <br>
+                    it will run when component init. <br>
+                    and if we want destroy something <br>
+                    such as we can define close webSocket code in useEffect return <br>
+                    it will run when component destroy <br><br>
+
+                    and if we want watch something changed <br>
+                    we can define it in useEffect second param <br>
+                    such as this demo.(plus) <br>
+                    when count have been updated. useEffect will run<br>
+                    the document title will be updated <br>
                 </aside>
             </section>
             <section>
@@ -215,9 +292,13 @@
                 <p>a fully-featured client routing library for React</p>
                 <img width="50%" height="auto" data-src="./imgs/router.png">
                 <aside class="notes">
-                    React Router is a fully-featured client and server-side routing library for React. based by the image can understand react router.
-                    chrome return our react app when visiting web page. we can config each component a URI. router based URI to control different components render in a current page.
-                    and the link will happened change, but it will not causing a full page reload.
+                    React Router is a fully-featured client routing library for React.<br>
+                    based the image can understand react router.<br>
+                    chrome return our react application <br>
+                    when visiting web page. <br>
+                    we can give each component a URI.<br>
+                    router based URI to render different components in current page. <br>
+                    and the url will be changed, but full page doesn't reload.<br>
                 </aside>
             </section>
         </section>
@@ -227,8 +308,9 @@
                 <p>MUI provides a fast way to develop React applications</p>
                 <img width="20%" height="auto" data-src="./imgs/mui.png">
                 <aside class="notes">
-                    MUI is a popular React UI framework. It provides a fast way to develop React applications. We can
-                    reuse many components already created by MUI team.
+                    MUI is a popular React UI framework.<br>
+                    It provide a fast way to develop React applications.<br>
+                    We can reuse many already MUI components to develop our component.
                 </aside>
             </section>
             <section>
@@ -240,7 +322,8 @@
                     </code>
                 </pre>
                 <aside class="notes">
-                    It's easy to import it to our React project. Just follow the documents at their website.
+                    It's easy to import it to our React project. <br>
+                    Just follow the documents at their website.
                 </aside>
             </section>
             <section>
@@ -264,7 +347,7 @@
                     </code>
                 </pre>
                 <aside class="notes">
-                    And for the components, we can use it in our code after import it the component.
+                    And for the components, we can use it in our code after import it.
                 </aside>
             </section>
             <section>
@@ -296,7 +379,9 @@
                     </code>
                 </pre>
                 <aside class="notes">
-                    We can customize MUI with our own theme. With the ThemeProvider can change the colors, the typography and much more.
+                    We can customize(custom : zi) MUI with our own theme(thi:mo).<br>
+                    With the ThemeProvider can change the colors <br>
+                    * the typography and much more.
                 </aside>
             </section>
         </section>
