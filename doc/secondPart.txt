@@ -27,3 +27,40 @@ It's easy to import it to our React project. Just follow the documents at their 
 And for the components, we can use it in our code after import it the component.
 
 We can customize MUI with our own theme. With the ThemeProvider can change the colors, the typography and much more.
+
+-- Axios
+We always need to communicate with the backend, and usually using RESTful apis.
+So we chose Axios to finish the network invoke.
+
+It's easy to import Axios to our Node.js project, just execute the shell.
+
+
+-- MirageJs
+When we develop the frontend in local, there always has a problem that we can't connect to the backend.
+So we can try to build a mock server which can mock the api response without backend.
+And we chose MirageJs to do this work.
+
+Like others, we can use npm install to quick import it to our project.
+Also, we use a flag save-dev in the shell, so it'll be effective only before building the code,
+and won't goto our environment.
+
+1st, import the createServer form MirageJs.
+2nd, use the createServer method to build a mock server.
+3rd, we can define the url we want to mock.
+Then, all http requests contained in the list from our code in frontend will proxy by MirageJs
+
+-- Test
+To make our code maintainable and strong, we must have complete tests. Not only the logic, but also the UI in frontend.
+We chose Jest as our base test framework. It's the most popular test framework for JS code. Just like Junit for Java.
+And chose Testing Library to test the UI part.
+
+-- Eslint
+To keep our code readable and maintainable, we should make sure all our code are in same style.
+We use Eslint to do this work. It just like checkStyle or FindBugs for Java.
+
+
+-- Husky
+To make the code clear in the repo.
+We add a git hook before each commit to make sure no code error or test error in our code.
+We chose Husky to do this work.
+

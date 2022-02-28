@@ -202,9 +202,7 @@
                 <p>Follow the documents at their website</p>
                 <pre data-id="code-animation">
                     <code class="hljs" data-trim data-line-numbers>
-                        <script type="text/template">
-                        npm install @mui/material @emotion/react @emotion/styled
-                        </script>
+                         $ npm install @mui/material @emotion/react @emotion/styled
                     </code>
                 </pre>
                 <aside class="notes">
@@ -217,7 +215,7 @@
 
                 </p>
                 <pre data-id="code-animation">
-                    <code class="hljs" data-trim data-line-numbers="3-6">
+                    <code class="hljs" data-trim data-line-numbers="3|6">
                         <script type="text/template">
                         import * as React from 'react';
                         import ReactDOM from 'react-dom';
@@ -241,7 +239,7 @@
 
                 </p>
                 <pre data-id="code-animation">
-                    <code class="hljs" data-trim data-line-numbers="3-12,15">
+                    <code class="hljs" data-trim data-line-numbers="3-4|6-12|15">
                         <script type="text/template">
                         import * as React from 'react';
                         import ReactDOM from 'react-dom';
@@ -273,17 +271,39 @@
                 <h2>Axios</h2>
                 <p>Promise based HTTP client for the browser and node.js</p>
                 <img width="20%" src="imgs/axios.png"/>
+                <aside class="notes">
+                    We always need to communicate with the backend, and usually using RESTful apis.
+                    So we chose Axios to finish the network invoke.
+                </aside>
             </section>
+
             <section>
+                <h3>Axios Install</h3>
                  <pre data-id="code-animation">
                      <code class="hljs" data-trim data-line-numbers>
-                         function fetchData(){
+                         $ npm install axios
+                     </code>
+                 </pre>
+            </section>
+            <section>
+                <h3>Usuage</h3>
+                 <pre data-id="code-animation">
+                     <code class="hljs" data-trim data-line-numbers="1|3-9|11-15">
+                         import axios from "axios";
+
+                         function someMethod(){
+                            // ....
                             const instance = axios.create({
                               baseURL: 'https://some-domain.com/api/',
                               timeout: 1000,
                               headers: {'X-Custom-Header': 'foobar'}
                             });
-                            return instance.get('/data')
+
+                            instance.get('/data')
+                              .then(res => {
+                                // get the response and do anything you want
+                                // ....
+                            })
                          }
                      </code>
                  </pre>
@@ -295,10 +315,30 @@
                 <p>Build complete frontend features,</p>
                 <p>even if your API doesn't exist</p>
                 <img width="20%" height="auto" data-src="./imgs/mirage.png">
+                <aside class="notes">
+                    When we develop the frontend in local, there always has a problem that we can't connect to the backend.
+                    So we can try to build a mock server which can mock the api response without backend.
+                    And we chose MirageJs to do this work.
+                </aside>
             </section>
             <section>
-                 <pre data-id="code-animation">
+                <h3>MirageJs Install</h3>
+
+                <pre data-id="code-animation">
                      <code class="hljs" data-trim data-line-numbers>
+                         $ npm install --save-dev miragejs
+                     </code>
+                </pre>
+                <aside class="notes">
+                    Like others, we can use npm install to quick import it to our project.
+                    Also, we use a flag save-dev in the shell, so it'll be effective only before building the code,
+                    and won't goto our environment.
+                </aside>
+            </section>
+            <section>
+                <h3>MirageJs Usage</h3>
+                 <pre data-id="code-animation">
+                     <code class="hljs" data-trim data-line-numbers="1|4,10|5-9">
                         import { createServer } from "miragejs"
 
                         export default function () {
@@ -312,47 +352,79 @@
                         }
                      </code>
                  </pre>
+                <aside class="notes">
+                    1st, import the createServer form MirageJs.
+                    2nd, use the createServer method to build a mock server.
+                    3rd, we can define the url we want to mock.
+                    Then, all http requests contained in the list from our code in frontend will proxy by MirageJs
+                </aside>
             </section>
         </section>
         <section>
             <section>
                 <h2>Test</h2>
                 <p>Not only the logic, but also the UI</p>
+                <p>Jest && Testing Library</p>
                 <img width="20%" height="auto" data-src="./imgs/test.png">
+                <aside class="notes">
+                    To make our code maintainable and strong, we must have complete tests. Not only the logic, but also the UI in frontend.
+                    We chose Jest as our base test framework. It's the most popular test framework for JS code. Just like Junit for Java.
+                    And chose Testing Library to test the UI part.
+                </aside>
             </section>
             <section>
-                <h2>Jest</h2>
+                <h2>Install</h2>
                 <pre data-id="code-animation">
-                     <code class="hljs" data-trim data-line-numbers>
-                        import { createServer } from "miragejs"
+                     <code class="hljs" data-trim data-line-numbers="1-2|4-5">
+                         // install Jest
+                         $ npm install --save-dev jest
 
-                        export default function () {
-                          createServer({
-                            routes() {
-                              this.get("/data", () => ({
-                                reminders: [],
-                              }))
-                            },
-                          })
-                        }
+                         // install testing-library
+                         $ npm install --save-dev @testing-library/react
                      </code>
                  </pre>
             </section>
             <section>
-                <h2>Testing Library</h2>
+                <h2>Jest Usage</h2>
                 <pre data-id="code-animation">
-                     <code class="hljs" data-trim data-line-numbers>
-                        import { createServer } from "miragejs"
+                     <code class="hljs" data-trim data-line-numbers="1-4|7|9,11|10">
+                         // some business code
+                         export function sum(a, b) {
+                           return a + b;
+                         }
 
-                        export default function () {
-                          createServer({
-                            routes() {
-                              this.get("/data", () => ({
-                                reminders: [],
-                              }))
-                            },
-                          })
-                        }
+                         // test with jest
+                         import sum form 'SomeBusinessModule'
+
+                         it('adds 1 + 2 to equal 3', () => {
+                           expect(sum(1, 2)).toBe(3);
+                         });
+                     </code>
+                 </pre>
+            </section>
+            <section>
+                <h2>Testing Library Usage</h2>
+                <pre data-id="code-animation">
+                     <code class="hljs" data-trim data-line-numbers="1|2-5|8|10|12|14-16">
+                         <script type="text/template">
+                            import HelloWorld from '../HelloWorld'
+                            import React from 'react'
+                            import {render, fireEvent, waitFor, screen}
+                             from '@testing-library/react'
+                            import '@testing-library/jest-dom'
+
+                            it('loads and displays greeting', async () => {
+                              render(<HelloWorld />)
+
+                              fireEvent.click(screen.getByText('Load Greeting'))
+
+                              await waitFor(() => screen.getByRole('heading'))
+
+                              expect(screen.getByRole('heading'))
+                                .toHaveTextContent('hello there')
+                              expect(screen.getByRole('button')).toBeDisabled()
+                            })
+                         </script>
                      </code>
                  </pre>
             </section>
@@ -361,17 +433,19 @@
             <section>
                 <h2>Eslint</h2>
                 <p>Find and fix problems in your JavaScript code</p>
+                <p>Already provided by React Script </p>
                 <img width="20%" height="auto" data-src="./imgs/eslint.png">
+                <aside class="notes">
+                    To keep our code readable and maintainable, we should make sure all our code are in same style.
+                    We use Eslint to do this work. It just like checkStyle or FindBugs for Java.
+                </aside>
             </section>
             <section>
-
+                <p>Change the eslint config file</p>
                 <pre data-id="code-animation">
                      <code class="hljs" data-trim data-line-numbers>
-                         // add to project
-                         npm install eslint --save-dev
-                         // init eslint
-                         npm init @eslint/config
-                         // you'll have a .eslintrc.{js,yml,json} file in your directory. In it, you'll see some rules configured like this
+                         // you'll have a .eslintrc.{js,yml,json} file in your project.
+                         // In it, you'll see some rules configured like this
                          // The names "semi" and "quotes" are the names of rules in ESLint.
                          // The first value is the error level of the rule and can be one of these values:
                          {
@@ -393,6 +467,33 @@
                 <h2>Husky</h2>
                 <p>Make easy to add git hook</p>
                 <img width="20%" height="auto" data-src="./imgs/husky.png">
+                <aside class="notes">
+                    To make the code clear in the repo.
+                    We add a git hook before each commit to make sure no code error or test error in our code.
+                    We chose Husky to do this work.
+                </aside>
+            </section>
+            <section>
+                <h3>Install</h3>
+                <pre data-id="code-animation">
+                     <code class="hljs" data-trim data-line-numbers="1-2|4-6|8-10|13-15">
+                         # Install
+                         $ npm install husky -D
+
+                         # Edit package.json > prepare script and run it once:
+                         $ npm set-script prepare "husky install"
+                         $ npm run prepare
+
+                         # Add a hook:
+                         $ npx husky add .husky/pre-commit "npm test"
+                         $ git add .husky/pre-commit
+
+
+                         # Make a commit:
+                         git commit -m "Keep calm and commit"
+                         # `npm test` will run every time you commit\
+                     </code>
+                 </pre>
             </section>
         </section>
         <section>
