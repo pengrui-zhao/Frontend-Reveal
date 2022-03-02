@@ -16,6 +16,7 @@
 <body>
 <div class="reveal">
     <div class="slides">
+<!--        home page -->
         <section>
             <section>
                 <h1>Tech Structure Of XXX</h1>
@@ -44,6 +45,8 @@
                 </aside>
             </section>
         </section>
+
+<!--        React-->
         <section>
             <section>
                 <h2>React</h2>
@@ -302,6 +305,8 @@
                 </aside>
             </section>
         </section>
+
+<!--        MUI-->
         <section>
             <section>
                 <h2>Mui</h2>
@@ -386,13 +391,15 @@
                 </aside>
             </section>
         </section>
+
+<!--        Axios-->
         <section>
             <section>
                 <h2>Axios</h2>
                 <p>Promise based HTTP client for the browser and node.js</p>
                 <img width="20%" src="imgs/axios.png"/>
                 <aside class="notes">
-                    We always need to communicate with the backend, and usually using RESTful apis.
+                    We always need to communicate with the backend, and usually using RESTful apis. <br/>
                     So we chose Axios to finish the network invoke.
                 </aside>
             </section>
@@ -404,11 +411,14 @@
                          $ npm install axios
                      </code>
                  </pre>
+                 <aside class="notes">
+                     It's easy to import Axios for a Node.js based project.
+                 </aside>
             </section>
             <section>
                 <h3>Usuage</h3>
                  <pre data-id="code-animation">
-                     <code class="hljs" data-trim data-line-numbers="1|3-9|11-15">
+                     <code class="hljs" data-trim data-line-numbers="1|5-9|11-12|13-16|17-19">
                          import axios from "axios";
 
                          function someMethod(){
@@ -419,16 +429,32 @@
                               headers: {'X-Custom-Header': 'foobar'}
                             });
 
+                            // methods: get, post, put, delete etc.
                             instance.get('/data')
                               .then(res => {
                                 // get the response and do anything you want
                                 // ....
-                            })
+                              })
+                              .catch(err=>{
+                                // http error here
+                              })
                          }
                      </code>
                  </pre>
+                <aside class="notes">
+                    It's a usage demo for axios. <br/>
+                    Just like HttpClient for Java. <br/>
+                    1st, import the axios and use the factory method to create a instance.  <br/>
+                    We can set up the base config in the factory method, such as baseURL, timeout.<br/>
+                    2rd, Just invoke the methods in the instance.  <br/>
+                    After that, a Promise object will be returned as the http response. <br/>
+                    We can use point then to do the normal logic with success response. <br/>
+                    And we can point catch to handle the network or api error.
+                </aside>
             </section>
         </section>
+
+<!--        MirageJs-->
         <section>
             <section>
                 <h2>miragejs</h2>
@@ -436,8 +462,8 @@
                 <p>even if your API doesn't exist</p>
                 <img width="20%" height="auto" data-src="./imgs/mirage.png">
                 <aside class="notes">
-                    When we develop the frontend in local, there always has a problem that we can't connect to the backend.
-                    So we can try to build a mock server which can mock the api response without backend.
+                    When we develop the frontend in local, there always has a problem that we can't connect to the backend.<br/>
+                    So we can try to build a mock server which can mock the api response without backend.<br/>
                     And we chose MirageJs to do this work.
                 </aside>
             </section>
@@ -450,8 +476,9 @@
                      </code>
                 </pre>
                 <aside class="notes">
-                    Like others, we can use npm install to quick import it to our project.
-                    Also, we use a flag save-dev in the shell, so it'll be effective only before building the code,
+                    Like others, we can use npm install to quick import it to our project.<br/>
+                    Also, we use a flag save-dev in the shell, <br/>
+                    so it'll be effective only before building the code,<br/>
                     and won't goto our environment.
                 </aside>
             </section>
@@ -473,13 +500,15 @@
                      </code>
                  </pre>
                 <aside class="notes">
-                    1st, import the createServer form MirageJs.
-                    2nd, use the createServer method to build a mock server.
-                    3rd, we can define the url we want to mock.
+                    1st, import the createServer form MirageJs.<br/>
+                    2nd, use the createServer method to build a mock server.<br/>
+                    3rd, we can define the url we want to mock.<br/>
                     Then, all http requests contained in the list from our code in frontend will proxy by MirageJs
                 </aside>
             </section>
         </section>
+
+<!--       Test -->
         <section>
             <section>
                 <h2>Test</h2>
@@ -487,8 +516,10 @@
                 <p>Jest && Testing Library</p>
                 <img width="20%" height="auto" data-src="./imgs/test.png">
                 <aside class="notes">
-                    To make our code maintainable and strong, we must have complete tests. Not only the logic, but also the UI in frontend.
-                    We chose Jest as our base test framework. It's the most popular test framework for JS code. Just like Junit for Java.
+                    To make our code maintainable and strong,<br/>
+                    we must have complete tests. Not only the logic, but also the UI in frontend.<br/>
+                    We chose Jest as our base test framework. <br/>
+                    It's the most popular test framework for JS code. Just like Junit for Java.<br/>
                     And chose Testing Library to test the UI part.
                 </aside>
             </section>
@@ -503,6 +534,10 @@
                          $ npm install --save-dev @testing-library/react
                      </code>
                  </pre>
+                <aside class="notes">
+                    It's the same as other dependency to install jest and testing library.<br/>
+                    And because we only use those two for test, we need add the flag 'save-dev' too.
+                </aside>
             </section>
             <section>
                 <h2>Jest Usage</h2>
@@ -521,11 +556,20 @@
                          });
                      </code>
                  </pre>
+                <aside class="notes">
+                    It's a demo for Jest usage.<br/>
+                    1st, we have a business to test. This's method to plus two numbers <br/>
+                    And then we can import the business to our test. <br/>
+                    We can use the method named 'it' to describe a test. <br/>
+                    The method has two parameters, <br/>
+                    the first is a description about what we'll do for that test<br/>
+                    the second is a lambda function for the test logic.
+                </aside>
             </section>
             <section>
                 <h2>Testing Library Usage</h2>
                 <pre data-id="code-animation">
-                     <code class="hljs" data-trim data-line-numbers="1|2-5|8|10|12|14-16">
+                     <code class="hljs" data-trim data-line-numbers="1|2-5|7|8-9|11-12|14-16|18-21">
                          <script type="text/template">
                             import HelloWorld from '../HelloWorld'
                             import React from 'react'
@@ -534,12 +578,17 @@
                             import '@testing-library/jest-dom'
 
                             it('loads and displays greeting', async () => {
+                              // render the page in a 'fake' chrome
                               render(<HelloWorld />)
 
+                              // the fireEvent can mock user action in the 'fake' chrome
                               fireEvent.click(screen.getByText('Load Greeting'))
 
+                              // the 'screen' can help us to get the content in the 'fake' chrome
+                              // wait until something we expect happen on the screen
                               await waitFor(() => screen.getByRole('heading'))
 
+                              // do some except
                               expect(screen.getByRole('heading'))
                                 .toHaveTextContent('hello there')
                               expect(screen.getByRole('button')).toBeDisabled()
@@ -547,8 +596,20 @@
                          </script>
                      </code>
                  </pre>
+                <aside class="notes">
+                    It's a demo to test the UI by testing-library.<br/>
+                    1st, it's a React component to test. <br/>
+                    and there are some test utils from jest and testing-library. <br/>
+                    As before, we use a 'it' method to describe a test, <br/>
+                    but we use an 'async' lambda to do test cause maybe there'll have some async render we need to wait. <br/>
+                    In the test body, we call the render method first to render a component in a Virtual dom container. <br/>
+                    We can think there're fake chrome and render the webpage with our code. <br/>
+
+                </aside>
             </section>
         </section>
+
+<!--        Eslint-->
         <section>
             <section>
                 <h2>Eslint</h2>
@@ -582,6 +643,8 @@
                 <img width="auto" height="auto" data-src="./imgs/eslint-error.png">
             </section>
         </section>
+
+<!--        Husky-->
         <section>
             <section>
                 <h2>Husky</h2>
@@ -616,12 +679,16 @@
                  </pre>
             </section>
         </section>
+
+<!--        Work progress-->
         <section>
             <p>What happened when we request a url</p>
             <img width="80%" height="auto" data-src="./imgs/working-progress.png">
             <aside class="notes">
             </aside>
         </section>
+
+<!--        Real Code-->
         <section>
             <h2>The Real Code</h2>
             <p>Mix all the things</p>
